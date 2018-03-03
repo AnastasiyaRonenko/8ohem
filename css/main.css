@@ -15,6 +15,16 @@
 	width: 50%;
 }
 
+.footer__menu {
+	display: inline-block;
+	vertical-align: top;
+}
+
+.footer__contacts {
+	display: inline-block;
+	vertical-align: top;
+}
+
 .menu__list {
 	margin-bottom: 17px;
 }
@@ -47,9 +57,9 @@
 }
 
 .footer__right {
-	float: right;
-	width: 50%;
+	float: left;
 	text-align: right;
+	width: 50%;
 }
 
 .footer__btn {
@@ -67,13 +77,20 @@
 		font-size: 12px;
 	}
 
+	.footer__left {
+		width: 75%;
+	}
+
+	.footer__right {
+		width: 25%;
+	}
+
 	.footer__main {
 		margin-bottom: 30px;
 	}
 
-	.footer__menu {
-		display: inline-block;
-		vertical-align: top;
+	.footer__menu-list {
+		float: left;
 	}
 
 	.menu__list {
@@ -84,17 +101,19 @@
 		margin: 0;
 	}
 
+	.footer__contacts-list {
+		float: left;
+	}
+
+	.footer__menu {
+		width: 33%;
+	}
+
 	.footer__contacts {
-		display: inline-block;
-		vertical-align: top;
+		width: 33%;
 	}
 
-	.marginN {
-		padding-right: 45px;
+	.paddingAdd {
+		padding-left: 30px;
 	}
-
-	.marginZ {
-		padding-right: 45px;
-	}
-
 }
