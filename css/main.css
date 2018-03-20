@@ -1,10 +1,9 @@
 .hedrer__top {
-	padding: 15px 0 15px 0;
+	padding: 10px 0 15px 0;
 	font-size: 0;
 }
 
 .left {
-	display: block;
 	margin-bottom: 8px;
 }
 
@@ -23,17 +22,12 @@
 	background: url("../images/mail.png");
 }
 
-.right {
-	display: block;
-}
-
 .center {
 	display: none;
 }
 
 .account {
-	display: inline-block;
-	width: 70%;
+	float: left;
 }
 
 .account a {
@@ -55,9 +49,7 @@
 }
 
 .lang {
-	display: inline-block;
-	width: 30%;
-	text-align: right;
+	float: right;
 }
 
 .location__item {
@@ -85,42 +77,51 @@
 
 .header__bottom {
 	position: relative;
-	padding: 20px 0 20px 0;
+	padding: 20px 0 25px 0;
 	background-color: #000;
 }
 
 .header__bottomLeft {
 	float: left;
-	width: 70%;
 }
 
 .lines {
-	display: inline-block;
 	padding-top: 5px;
 }
 
+.lines span {
+	display: block;
+	width: 40px;
+	height: 2px;
+	margin-bottom: 6px;
+	background-color: #fff;
+}
+
+.lines span:last-child {
+	margin-bottom: 0;
+}
+
 .logo {
-	display: inline-block;
 	position: absolute;
 	left: 0;
 	right: 0;
+	top: 0;
+	bottom: 0;
 	margin: auto;
 	width: 117px;
-	height: 28px;
-}
-
-.logo img {
-	width: 100%;
-	height: auto;
+	height: 25px;
+	background: url("../images/logo.png");
 }
 
 .header__menu {
+	display: none;
 	position: absolute;
+	border-top: 1px solid #fff;
 	text-align: center;
 	top: 100%;
 	left: 0;
 	width: 100%;
-	background-color: rgba(0,0,0,0.8);
+	background-color: rgba(0,0,0,.8);
 	z-index: 2;
 }
 
@@ -140,21 +141,28 @@
 
 .header__bottomRight {
  	float: right;
- 	width: 30%;
- 	text-align: right;
 }
 
-.search {
+.header__formCont {
+	display: none;
+}
+
+.header__form {
 	display: none;
 }
 
 .basket {
-	
-}
-
-.basket a {
 	color: #fff;
 	text-decoration: none;
+}
+
+.basket:after{
+	display: inline-block;
+	content: '';
+	width: 27px;
+    height: 21px;
+    margin-left: 2px;
+	background: url("../images/basket.png");
 }
 
 .banner {
@@ -375,13 +383,9 @@
 }
 
 @media screen and (min-width: 480px) {
-	.header__bottom {
-		padding: 25px 0 25px 0;
-	}
-
 	.left {
 		float: left;
-		width: 50%;
+		margin: 0;
 	}
 
 	.left a {
@@ -390,7 +394,6 @@
 
 	.right {
 		float: right;
-		width: 50%;
 	}
 
 	.header__menu-list {
@@ -403,8 +406,7 @@
 	}
 
 	.account {
-		width: 60%;
-		text-align: right;
+		margin-right: 55px;
 	}
 
 	.location__item a {
@@ -413,11 +415,6 @@
 
 	.location__item:after {
 		margin-right: 5px;
-	}
-
-	.lang {
-		width: 40%;
-		text-align: right;
 	}
 
 	.banner__inner {
@@ -469,13 +466,15 @@
 
 	.logo {
 		position: inherit;
-		margin-right: 35px;
+		display: inline-block;
+		margin-right: 17px;
 	}
 
 	.header__menu {
-		position: inherit;
+		position: static;
 		display: inline-block;
 		width: auto;
+		border-top: none;
 		text-align: left;
 	}
 
@@ -486,11 +485,7 @@
 
 	.menu__item {
 		display: inline-block;
-		padding-right: 40px;
-	}
-
-	.menu__item:last-child {
-		padding-right: 0;
+		padding: 0 17px 0 17px;
 	}
 
 	.menu__item a {
@@ -499,10 +494,54 @@
 		font-size: 14px;
 	}
 
-	.search {
-		display: inline-block;
-		margin-right: 20px;
-	}
+	.header__form {
+    	position: absolute;
+    	right: 0;
+    	top: 110%;
+    	z-index: 1000;
+    }
+
+    .colortext {
+    	font-size: 14px;
+    }
+
+    .header__form input[type="search"] {
+    	border: none;
+    	padding-right: 25px;
+    	border-bottom: 1px solid #000;
+    	background-color: transparent;
+    }
+
+    .header__form input[type="search"]:focus {
+    	outline: none;
+    }
+    
+    .header__form button {
+    	background: url(../images/search_bl.png);
+    	border: none;
+    	width: 23px;
+    	height: 23px;
+    	font-size: 0;
+    	position: absolute;
+    	bottom: 3px;
+    	right: 0;
+    }
+
+    .header__form button:focus {
+    	outline: none;
+    }
+    
+    .header__formCont {
+    	display: inline-block;
+    }
+
+    .searchIcon {
+    	display: block;
+    	width: 23px;
+    	height: 23px;
+    	margin-right: 16px;
+    	background: url("../images/search.png");
+    }
 
 	.basket {
 		display: inline-block;
@@ -526,7 +565,7 @@
 	}
 
 	.new__position{
-		margin-bottom: 35px;
+		margin: 0 -15px 35px -15px;
 	}
 
 	.slides__item {
@@ -617,23 +656,48 @@
 	}
 
 	.left {
-		width: 70%;
+		width: 25%;
 	}
 
 	.right {
-		width: 30%;
+		width: 25%;
 	}
 
 	.center {
-		display: block;
-		position: absolute;
-		right: 0;
-		left: 0;
-		margin-right: auto;
-		margin-left: auto;
-		width: 370px;
-		height: 15px;
-		z-index: 3;
+		float: left;
+	    display: block;
+	    width: 50%;
+	    text-align: center;
 		font-size: 14px;
+	}
+
+	@media screen and (min-width: 1200px) {
+	
+	.header__formCont {
+		margin-right: 10px;
+	} 
+
+	.header__form {
+		display: block;
+		position: relative;
+	}
+
+	.header__form button {
+		background: url("../images/search.png");
+		cursor: pointer;
+	}
+
+	.colortext {
+		color: #fff;
+	}
+
+	.header__form input[type="search"] {
+    	padding-right: 25px;
+    	border-bottom: 1px solid #fff;
+    	background-color: transparent;
+	}
+
+	.searchIcon {
+		display: none;
 	}
 }
